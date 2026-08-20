@@ -1,4 +1,4 @@
-# 🏗️ BuildGraph — Graph-Powered Construction Quantity & Cost Estimator
+# BuildGraph — Graph-Powered Construction Quantity & Cost Estimator
 
 **BuildGraph** is a graph-native construction quantity estimation and historical cost intelligence web application built with **Express.js**, **Neo4j / CognoDB (Official Bolt Cypher Driver)**, and **React (Vite)**.
 
@@ -6,7 +6,7 @@ It replaces static pricing spreadsheets and rigid relational tables with a **gra
 
 ---
 
-## 🌟 1. Use Case & "Why a Graph Database?"
+## 1. Use Case & "Why a Graph Database?"
 
 ### The Problem with Relational Databases (SQL) & Spreadsheets in Quantity Surveying
 Traditional construction quantity surveying relies on static spreadsheets or relational SQL databases (`SELECT * FROM costs WHERE location = 'Lagos'`). This approach struggles with:
@@ -24,7 +24,7 @@ Graph databases treat **relationships as first-class entities**. Traversal along
 
 ---
 
-## 📊 2. Graph Data Model & Schema Documentation
+## 2. Graph Data Model & Schema Documentation
 
 The graph data model consists of labeled nodes and typed, directed relationships:
 
@@ -61,7 +61,7 @@ graph TD
 
 ---
 
-## ⚡ 3. Main Cypher Queries Explained
+## 3. Main Cypher Queries Explained
 
 All Cypher queries run via the **official Neo4j JavaScript Bolt driver** (`neo4j-driver`) using **parameterized queries** to prevent Cypher injection vulnerabilities.
 
@@ -113,7 +113,7 @@ CREATE (p)-[:HAS_TYPE]->(b)
 
 ---
 
-## 🛠️ 4. Tech Stack & Engineering Architecture
+## 4. Tech Stack & Engineering Architecture
 
 ### Backend Stack
 - **Node.js & Express.js**: REST API application server.
@@ -129,7 +129,7 @@ CREATE (p)-[:HAS_TYPE]->(b)
 
 ---
 
-## 🚀 5. Setup & Run Instructions
+## 5. Setup & Run Instructions
 
 ### 1. Repository Setup & Dependencies
 Clone the repository and install all workspace dependencies:
@@ -174,7 +174,7 @@ The project is pre-configured for one-click deployment on **Netlify**:
 
 ---
 
-## 📱 6. Application UI/UX Walkthrough
+## 6. Application UI/UX Walkthrough
 
 ### 1. Main Dashboard (`Dashboard.jsx`)
 - Portfolio metrics (Total Historical Cost Nodes, Graph Match Rate, Estimated Portfolio Total).
@@ -204,7 +204,7 @@ The project is pre-configured for one-click deployment on **Netlify**:
 
 ---
 
-## 📋 7. API Reference
+## 7. API Reference
 
 ### Projects & Estimates
 - `POST /api/estimates`: Run 5-hop Cypher traversal and generate estimate.
