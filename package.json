@@ -1,0 +1,26 @@
+{
+  "name": "construction-estimator-root",
+  "version": "1.0.0",
+  "description": "Graph-powered Construction Quantity and Cost Estimator",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "install:all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "seed": "cd backend && npm run seed",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "build": "cd backend && npm install && cd ../frontend && npm install && npm run build"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "neo4j-driver": "^5.19.0",
+    "serverless-http": "^3.2.0",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
