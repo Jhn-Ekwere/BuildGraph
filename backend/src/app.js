@@ -9,10 +9,13 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// Safe middleware resolver for ESM/CJS bundler interop
+const resolveRouter = (mod) => (mod && typeof mod === 'object' && mod.default ? mod.default : mod);
+
 // API Endpoints
-app.use('/api/projects', projectRoutes);
-app.use('/api/estimates', estimateRoutes);
-app.use('/api/costs', costRoutes);
+app.use('/api/projects', resolveRouter(projectRoutes));
+app.use('/api/estimates', resolveRouter(estimateRoutes));
+app.use('/api/costs', resolveRouter(costRoutes));
 
 // Health check endpoint
 app.get('/api/health', (req, res) => {
